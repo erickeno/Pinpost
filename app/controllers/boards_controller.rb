@@ -20,7 +20,23 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find(params[:id])
   end
+  
+  def edit
+    @board = Board.find(params[:id])
+  end
 
+  def update
+    @board = Board.find(params[:id])
+    @board.update(board_params)
+    if @board.save
+      flash[:notice]= "Board has been updated."
+      redirect_to @board
+    else
+      flash[:alert]= "Board has not been updated."
+      render 'edit'
+    end
+  end
+  
   private
   def board_params
     params.require(:board).permit(:title, :description)
