@@ -36,6 +36,12 @@ class BoardsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @board = Board.find(params[:id]).destroy
+    flash[:notice] = "Board has been destroyed."
+    redirect_to boards_path
+  end
   
   private
   def board_params
