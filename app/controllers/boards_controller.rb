@@ -13,6 +13,7 @@ class BoardsController < ApplicationController
       flash[:notice]= 'Board has been created'
       redirect_to @board
     else
+      flash[:alert]= 'Board has not been created.'
       render 'new'
     end
   end
