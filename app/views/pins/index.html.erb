@@ -1,0 +1,8 @@
+<% if @pins.empty? %>
+  <h2>Currently no pins available</h2>
+<% else %>
+<% @pins.each do |pin| %>
+  <%= pin.name %>
+  <%= image_tag(pin.image.thumb.url) %>
+<% end %>
+<% end %>

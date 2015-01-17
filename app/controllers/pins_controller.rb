@@ -1,7 +1,10 @@
 class PinsController < ApplicationController
-  before_action :set_board
+  before_action :set_board, except: [:index]
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @pins = Pin.all
+  end
   def new
     @pin = @board.pins.build
   end
