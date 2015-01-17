@@ -1,4 +1,4 @@
 class Pin < ActiveRecord::Base
-  belongs_to :project
+  belongs_to :board
   validates :name, presence: true
 end

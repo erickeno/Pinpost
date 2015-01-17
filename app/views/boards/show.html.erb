@@ -4,3 +4,12 @@
 <%= link_to "Delete Board", board_path(@board), method: :delete, data: { confirm: "Are you sure you want to delete this Board?" } %>
 <%= link_to "New Pin", new_board_pin_path(@board) %>
 
+<ul id = "pins">
+  <% @board.pins.each do |pin| %>
+    <li>
+      #<%= pin.id %> -
+      <%= link_to pin.name, [@board, pin] %>
+    </li>
+  <% end %>
+</ul>
+
