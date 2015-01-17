@@ -7,7 +7,7 @@
 <ul id = "pins">
   <% @board.pins.each do |pin| %>
     <li>
-      #<%= pin.id %> -
+      <%= image_tag(pin.image.thumb.url) %>
       <%= link_to pin.name, [@board, pin] %>
     </li>
   <% end %>
