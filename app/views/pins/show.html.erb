@@ -2,3 +2,4 @@
   <h2><%= @pin.name %></h2>
   <%= image_tag(@pin.image.normal.url)%>
 </div>
+<%= link_to "Edit Pin", [:edit, @board, @pin ] %>
